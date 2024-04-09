@@ -5,7 +5,7 @@ logging:
   level:
     com.fastcampus.projectboard: debug
     org.springframework.web.servlet: debug
-    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.orm.jdbc.bind: trace
 
 spring:
   datasource:
@@ -21,7 +21,6 @@ spring:
       hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
   sql.init.mode: always
-
   data.rest:
-      base-path: /api
-      detection-strategy: annotated
+    base-path: /api
+    detection-strategy: annotated
