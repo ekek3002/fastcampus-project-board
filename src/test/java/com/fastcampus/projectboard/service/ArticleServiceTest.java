@@ -66,7 +66,7 @@ class ArticleServiceTest {
 
     @DisplayName("검색어 없이 게시글을 해시태그 검색하면, 빈 페이지를 반환한다.")
     @Test
-    void givenNoSearchParameters_whenSearchingArticlesViaHashtag_thenReturnEmptyPage() {
+    void givenNoSearchParameters_whenSearchingArticlesViaHashtag_thenReturnsEmptyPage() {
         // Given
         Pageable pageable = Pageable.ofSize(20);
 
@@ -258,7 +258,6 @@ class ArticleServiceTest {
 
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
-                1L,
                 "hyeonggyun",
                 "password",
                 "hyeonggyun@mail.com",
