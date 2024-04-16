@@ -9,9 +9,10 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 public class DataRestConfig {
 
     @Bean
-    public RepositoryRestConfigurer repositoryRestConfiguration() {
+    public RepositoryRestConfigurer repositoryRestConfigurer() {
         return RepositoryRestConfigurer.withConfig((config, cors) ->
                 config.exposeIdsFor(UserAccount.class)
         );
     }
+
 }
