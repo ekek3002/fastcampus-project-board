@@ -1,5 +1,6 @@
 package com.fastcampus.projectboard.controller;
 
+import com.fastcampus.projectboard.domain.constant.FormStatus;
 import com.fastcampus.projectboard.domain.constant.SearchType;
 import com.fastcampus.projectboard.dto.UserAccountDto;
 import com.fastcampus.projectboard.dto.request.ArticleRequest;
@@ -73,6 +74,13 @@ public class ArticleController {
     }
 
     @GetMapping("/form")
+    public String articleForm(ModelMap map) {
+        map.addAttribute("formStatus", FormStatus.CREATE);
+
+        return "articles/form";
+    }
+
+    @PostMapping("/form")
     public String postNewArticle(ArticleRequest articleRequest) {
         // TODO: 인증 정보를 넣어줘야 한다.
         articleService.saveArticle(articleRequest.toDto(UserAccountDto.of(
