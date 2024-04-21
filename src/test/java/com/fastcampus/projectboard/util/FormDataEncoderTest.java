@@ -20,12 +20,12 @@ class FormDataEncoderTest {
 
     private final FormDataEncoder formDataEncoder;
 
-    public FormDataEncoderTest(@Autowired FormDataEncoder formDataEncoder) {
+    FormDataEncoderTest(@Autowired FormDataEncoder formDataEncoder) {
         this.formDataEncoder = formDataEncoder;
     }
 
     @TestComponent
-    public static class EmptyConfig {}
+    static class EmptyConfig {}
 
     @Test
     void givenObject_whenEncoding_thenReturnsFormEncodedString() {

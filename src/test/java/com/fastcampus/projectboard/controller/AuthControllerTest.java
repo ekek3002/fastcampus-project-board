@@ -27,7 +27,7 @@ public class AuthControllerTest {
     @MockBean private ArticleService articleService;
     @MockBean private PaginationService paginationService;
 
-    public AuthControllerTest(@Autowired MockMvc mvc) {
+    AuthControllerTest(@Autowired MockMvc mvc) {
         this.mvc = mvc;
     }
 
