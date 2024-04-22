@@ -22,8 +22,15 @@ public class ArticleComment extends AuditingFields {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter @ManyToOne(optional = false) private Article article; // 게시글 (ID)
-    @Setter @ManyToOne(optional = false) @JoinColumn(name = "userId") private UserAccount userAccount;
+    @Setter
+    @ManyToOne(optional = false)
+    private Article article; // 게시글 (ID)
+
+    @Setter
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "userId")
+    private UserAccount userAccount;
+
     @Setter @Column(nullable = false, length = 500) private String content; // 본문
 
 
