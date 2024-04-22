@@ -23,7 +23,7 @@ public class DataRestTest {
 
     private final MockMvc mvc;
 
-    DataRestTest(@Autowired MockMvc mvc) {
+    public DataRestTest(@Autowired MockMvc mvc) {
         this.mvc = mvc;
     }
 
