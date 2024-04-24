@@ -122,7 +122,7 @@ class ArticleServiceTest {
         Page<ArticleDto> articles = sut.searchArticlesViaHashtag(hashtagName, pageable);
 
         // Then
-        assertThat(articles).isEqualTo(new PageImpl<>(List.of(expectedArticle), pageable, 1));
+        assertThat(articles).isEqualTo(new PageImpl<>(List.of(ArticleDto.from(expectedArticle)), pageable, 1));
         then(articleRepository).should().findByHashtagNames(List.of(hashtagName), pageable);
     }
 
@@ -210,7 +210,7 @@ class ArticleServiceTest {
         // Given
         ArticleDto dto = createArticleDto();
         Set<String> expectedHashtagNames = Set.of("java", "spring");
-        HashSet<Object> expectedHashtags = new HashSet<>();
+        HashSet<Hashtag> expectedHashtags = new HashSet<>();
         expectedHashtags.add(createHashtag("java"));
 
         given(userAccountRepository.getReferenceById(dto.userAccountDto().userId())).willReturn(createUserAccount());
